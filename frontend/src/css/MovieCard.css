@@ -16,6 +16,8 @@
     position: absolute;
     z-index: 1;
     width: 18%;
+    font-size: 14px;
+    font-weight: bold;
     background-color: #FFC107;
     display: flex;
     justify-content: center;

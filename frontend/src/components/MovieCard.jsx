@@ -1,17 +1,17 @@
 import "../css/MovieCard.css";
 
-function MovieCard({ movie }) {
+function MovieCard({ content }) {
   const poster_url = "https://image.tmdb.org/t/p/w185";
 
   return (
     <div className="movie-card">
       <div className="movie-image">
         <div className="movie-rating">
-          <p>{movie.vote_average}</p>
+          <p>{content.vote_average}</p>
         </div>
-        <img src={poster_url + movie.backdrop_path}></img>
+        <img src={poster_url + content.backdrop_path}></img>
       </div>
-      <p className="movie-title">{movie.title}</p>
+      <p className="movie-title">{content.title}</p>
     </div>
   );
 }
