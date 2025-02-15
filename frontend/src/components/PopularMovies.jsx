@@ -8,9 +8,13 @@ function PopularMovies() {
 
   useEffect(() => {
     const getPopularMovies = async () => {
-      const response = await fetch(`${api_url}?api_key=${api_key}`);
-      const data = await response.json();
-      setMovies(data.results);
+      try {
+        const response = await fetch(`${api_url}?api_key=${api_key}`);
+        const data = await response.json();
+        setMovies(data.results);
+      } catch (error) {
+        console.error(error);
+      }
     };
     getPopularMovies();
   }, []);

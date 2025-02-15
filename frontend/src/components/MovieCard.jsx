@@ -1,7 +1,7 @@
 import "../css/MovieCard.css";
 
 function MovieCard({ content }) {
-  const poster_url = "https://image.tmdb.org/t/p/w185";
+  const poster_url = "https://image.tmdb.org/t/p/w500";
 
   return (
     <div className="movie-card">

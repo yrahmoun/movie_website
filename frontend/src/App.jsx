@@ -4,6 +4,7 @@ import Navbar from "./components/navbar";
 import TopRatedMovies from "./components/TopRatedMovies";
 import SearchResults from "./components/SearchResults";
 import { useState } from "react";
+import TrendingMovies from "./components/TrendingMovies";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <Navbar setSearch={setSearch} />
+      <TrendingMovies />
       <div className="movie-display">
         {search === "" ? (
           <>

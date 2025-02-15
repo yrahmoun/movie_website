@@ -1,0 +1,48 @@
+.trending-movie-card {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F8F9FA;
+}
+
+.movie-info {
+    width: 80%;
+    height: 60%;
+}
+
+.movie-info h3 {
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.movie-data {
+    width: 20%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-data p:first-child {
+    display: block;
+    background-color: #FFC107;
+    color: #212529;
+    border-radius: 15%;
+}
+
+.movie-info button {
+    font-size: 1.2em;
+    height: 40px;
+    width: 120px;
+    background-color: #00ACC1;
+    border-radius: 8%;
+    border: none;
+}
+
+.movie-overview {
+    width: 60%;
+    height: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
