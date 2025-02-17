@@ -1,29 +1,14 @@
-import { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
+import { useMovies } from "../context/MovieContext";
 
 function PopularMovies() {
-  const [movies, setMovies] = useState([]);
-  const api_key = import.meta.env.VITE_API_KEY;
-  const api_url = "https://api.themoviedb.org/3/movie/popular";
-
-  useEffect(() => {
-    const getPopularMovies = async () => {
-      try {
-        const response = await fetch(`${api_url}?api_key=${api_key}`);
-        const data = await response.json();
-        setMovies(data.results);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getPopularMovies();
-  }, []);
+  const { popularMovies } = useMovies();
 
   return (
     <div className="movie-section">
       <h3 className="movie-tag">POPULAR MOVIES:</h3>
       <div className="movie-container">
-        {movies.map((movie) => (
+        {popularMovies.slice(0, 8).map((movie) => (
           <MovieCard key={movie.id} content={movie} />
         ))}
       </div>
