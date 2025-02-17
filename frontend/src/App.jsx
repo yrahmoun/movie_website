@@ -1,28 +1,17 @@
 import "./css/App.css";
-import PopularMovies from "./components/PopularMovies";
-import Navbar from "./components/navbar";
-import TopRatedMovies from "./components/TopRatedMovies";
-import SearchResults from "./components/SearchResults";
-import { useState } from "react";
-import TrendingMovies from "./components/TrendingMovies";
+import { Routes, Route } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import PopularMoviesPage from "./pages/PopularMoviesPage";
+import TopRatedMoviesPage from "./pages/TopRatedMoviesPage";
 
 function App() {
-  const [search, setSearch] = useState("");
-
   return (
     <>
-      <Navbar setSearch={setSearch} />
-      <TrendingMovies />
-      <div className="movie-display">
-        {search === "" ? (
-          <>
-            <PopularMovies />
-            <TopRatedMovies />
-          </>
-        ) : (
-          <SearchResults search={search}/>
-        )}
-      </div>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/Popular_movies" element={<PopularMoviesPage />} />
+        <Route path="/TopRated_movies" element={<TopRatedMoviesPage />} />
+      </Routes>
     </>
   );
 }
