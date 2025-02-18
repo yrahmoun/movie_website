@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SimilarMovies from "../components/SimilarMovies";
 
 function MovieData({ id }) {
   const api_url = "https://api.themoviedb.org/3/movie/";
@@ -63,6 +64,7 @@ function MovieData({ id }) {
             </p>
           </div>
         </div>
+        <SimilarMovies id={id} />
       </div>
     </div>
   );
