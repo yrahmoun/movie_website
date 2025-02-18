@@ -1,4 +1,5 @@
 import "../css/TrendingMovieCard.css";
+import { Link } from "react-router-dom";
 
 function TrendingMovieCard({content}) {
     const poster_url = "https://image.tmdb.org/t/p/original";
@@ -23,7 +24,9 @@ function TrendingMovieCard({content}) {
         <div className="movie-overview">
           <p>{content.overview}</p>
         </div>
-        <button>Watch Now</button>
+        <Link to={`/movie/${content.id}`}>
+          <button>Watch Now</button>
+        </Link>
       </div>
     </div>
   )

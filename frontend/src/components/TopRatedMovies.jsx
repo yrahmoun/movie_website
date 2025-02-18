@@ -1,5 +1,5 @@
 import { useMovies } from "../context/MovieContext";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 
 function TopRatedMovies() {
@@ -13,7 +13,9 @@ function TopRatedMovies() {
       <h3 className="movie-tag">TOP RATED MOVIES:</h3>
       <div className="movie-container">
         {movies.map((show) => (
-          <MovieCard key={show.id} content={show} />
+          <Link to={`/movie/${show.id}`}>
+            <MovieCard key={show.id} content={show} />
+          </Link>
         ))}
       </div>
     </div>

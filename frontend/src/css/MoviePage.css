@@ -1,0 +1,53 @@
+.all-container {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-box {
+    width: 90%;
+}
+
+.movie-box h1 {
+    color: #bdbdbd;
+}
+
+.media-player {
+    width: 80%;
+    height: 420px;
+    overflow: hidden;
+    justify-self: center;
+    margin-bottom: 25px;
+}
+
+.media-player iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.info-container {
+    display: flex;
+}
+
+.poster {
+    width: 30%;
+    margin-right: 20px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.movie-info {
+    color: #bdbdbd;
+}
+
+.info-title {
+    font-weight: bolder;
+    color: #006875;
+}

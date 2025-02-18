@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 
 function SearchResults({ search }) {
@@ -26,7 +27,9 @@ function SearchResults({ search }) {
       <h3 className="movie-tag">SEARCH RESULTS:</h3>
       <div className="movie-container">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} content={movie} />
+          <Link to={`/movie/${movie.id}`}>
+            <MovieCard key={movie.id} content={movie} />
+          </Link>
         ))}
       </div>
     </div>

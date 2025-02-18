@@ -40,6 +40,10 @@
     border: none;
 }
 
+.movie-info button:hover {
+    cursor: pointer;
+}
+
 .movie-overview {
     width: 60%;
     height: 50%;

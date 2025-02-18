@@ -1,6 +1,6 @@
 import MovieCard from "./MovieCard";
 import { useMovies } from "../context/MovieContext";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 function PopularMovies() {
   const { popularMovies } = useMovies();
@@ -13,7 +13,9 @@ function PopularMovies() {
       <h3 className="movie-tag">POPULAR MOVIES:</h3>
       <div className="movie-container">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} content={movie} />
+          <Link to={`/movie/${movie.id}`}>
+            <MovieCard key={movie.id} content={movie} />
+          </Link>
         ))}
       </div>
     </div>
