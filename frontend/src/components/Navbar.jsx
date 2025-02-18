@@ -1,7 +1,10 @@
 import "../css/Navbar.css";
 import { Link } from "react-router-dom";
+import { useMovies } from "../context/MovieContext";
 
-function Navbar({ setSearch }) {
+function Navbar() {
+  const { setSearch } = useMovies();
+
   return (
     <div className="navbar">
       <div className="title">

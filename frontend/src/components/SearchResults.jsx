@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
+import { useMovies } from "../context/MovieContext";
 
-function SearchResults({ search }) {
+function SearchResults() {
   const [movies, setMovies] = useState([]);
+  const { search, setSearch } = useMovies();
   const api_key = import.meta.env.VITE_API_KEY;
   const api_url = "https://api.themoviedb.org/3/search/movie";
 
@@ -27,8 +29,8 @@ function SearchResults({ search }) {
       <h3 className="movie-tag">SEARCH RESULTS:</h3>
       <div className="movie-container">
         {movies.map((movie) => (
-          <Link to={`/movie/${movie.id}`}>
-            <MovieCard key={movie.id} content={movie} />
+          <Link key={movie.id} to={`/movie/${movie.id}`} onClick={() => setSearch("")}>
+            <MovieCard content={movie} />
           </Link>
         ))}
       </div>

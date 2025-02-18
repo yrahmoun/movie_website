@@ -9,7 +9,7 @@ function MovieCard({ content }) {
         <div className="movie-rating">
           <p>{content.vote_average}</p>
         </div>
-        <img src={poster_url + content.backdrop_path}></img>
+        <img src={poster_url + content.poster_path}></img>
       </div>
       <p className="movie-title">{content.title}</p>
     </div>

@@ -4,20 +4,21 @@ import Navbar from "../components/navbar";
 import SearchResults from "../components/SearchResults";
 import "../css/MoviePage.css";
 import MovieData from "../components/MovieData";
+import { useMovies } from "../context/MovieContext";
 
 function MoviePage() {
-  const [search, setSearch] = useState("");
+  const { search } = useMovies();
   const { id } = useParams();
 
   return (
     <>
-      <Navbar setSearch={setSearch} />
+      <Navbar />
       {search === "" ? (
         <>
           <MovieData id={id} />
         </>
       ) : (
-        <SearchResults search={search} />
+        <SearchResults />
       )}
     </>
   );

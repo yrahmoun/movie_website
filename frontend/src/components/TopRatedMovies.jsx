@@ -13,8 +13,8 @@ function TopRatedMovies() {
       <h3 className="movie-tag">TOP RATED MOVIES:</h3>
       <div className="movie-container">
         {movies.map((show) => (
-          <Link to={`/movie/${show.id}`}>
-            <MovieCard key={show.id} content={show} />
+          <Link key={show.id} to={`/movie/${show.id}`}>
+            <MovieCard content={show} />
           </Link>
         ))}
       </div>

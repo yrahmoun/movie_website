@@ -1,21 +1,21 @@
 import Navbar from "../components/navbar";
 import TopRatedMovies from "../components/TopRatedMovies";
 import SearchResults from "../components/SearchResults";
-import { useState } from "react";
+import { useMovies } from "../context/MovieContext";
 
 function TopRatedMoviesPage() {
-  const [search, setSearch] = useState("");
+  const { search } = useMovies();
 
   return (
     <>
-      <Navbar setSearch={setSearch} />
+      <Navbar />
       <div className="movie-display">
         {search === "" ? (
           <>
             <TopRatedMovies />
           </>
         ) : (
-          <SearchResults search={search} />
+          <SearchResults />
         )}
       </div>
     </>

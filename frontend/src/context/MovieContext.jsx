@@ -5,6 +5,7 @@ const MovieContext = createContext();
 export const MovieProvider = ({ children }) => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
+  const [search, setSearch] = useState("");
   const api_key = import.meta.env.VITE_API_KEY;
   const popular_movies_api_url = "https://api.themoviedb.org/3/movie/popular";
   const top_rated_movies_api_url =
@@ -38,7 +39,9 @@ export const MovieProvider = ({ children }) => {
   }, []);
 
   return (
-    <MovieContext.Provider value={{ popularMovies, topRatedMovies }}>
+    <MovieContext.Provider
+      value={{ popularMovies, topRatedMovies, search, setSearch }}
+    >
       {children}
     </MovieContext.Provider>
   );

@@ -25,8 +25,8 @@ function SimilarMovies({ id }) {
       <h3 className="movie-tag">Similar MOVIES:</h3>
       <div className="movie-container">
         {movies.map((movie) => (
-          <Link to={`/movie/${movie.id}`}>
-            <MovieCard key={movie.id} content={movie} />
+          <Link key={movie.id} to={`/movie/${movie.id}`}>
+            <MovieCard content={movie} />
           </Link>
         ))}
       </div>

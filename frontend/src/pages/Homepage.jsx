@@ -2,15 +2,15 @@ import PopularMovies from "../components/PopularMovies";
 import Navbar from "../components/navbar";
 import TopRatedMovies from "../components/TopRatedMovies";
 import SearchResults from "../components/SearchResults";
-import { useState } from "react";
+import { useMovies } from "../context/MovieContext";
 import TrendingMovies from "../components/TrendingMovies";
 
 function Homepage() {
-  const [search, setSearch] = useState("");
+  const { search } = useMovies();
 
   return (
     <>
-      <Navbar setSearch={setSearch} />
+      <Navbar />
       <div className="movie-display">
         {search === "" ? (
           <>
@@ -19,7 +19,7 @@ function Homepage() {
             <TopRatedMovies />
           </>
         ) : (
-          <SearchResults search={search} />
+          <SearchResults />
         )}
       </div>
     </>
