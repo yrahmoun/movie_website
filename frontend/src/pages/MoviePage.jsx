@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import SearchResults from "../components/SearchResults";
 import "../css/MoviePage.css";
 import MovieData from "../components/MovieData";

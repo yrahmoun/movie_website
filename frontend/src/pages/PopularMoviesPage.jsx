@@ -1,5 +1,5 @@
 import PopularMovies from "../components/PopularMovies";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import SearchResults from "../components/SearchResults";
 import { useMovies } from "../context/MovieContext";
 

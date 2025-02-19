@@ -1,4 +1,4 @@
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import TopRatedMovies from "../components/TopRatedMovies";
 import SearchResults from "../components/SearchResults";
 import { useMovies } from "../context/MovieContext";

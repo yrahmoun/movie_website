@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 function TrendingMovieCard({content}) {
     const poster_url = "https://image.tmdb.org/t/p/original";
-    console.log(content);
 
   return (
     <div
