@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 function Navbar() {
-  const { setSearch } = useMovies();
+  const { search, setSearch } = useMovies();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,17 +18,36 @@ function Navbar() {
           <input
             type="text"
             placeholder="search movie...."
+            value={search}
             onChange={(e) => setSearch(e.target.value)}
           ></input>
         </div>
         <div className="navlist">
-          <Link className="list-item" to="/">
+          <Link
+            className="list-item"
+            onClick={() => {
+              setSearch("");
+            }}
+            to="/"
+          >
             Home
           </Link>
-          <Link className="list-item" to="/Popular_movies">
+          <Link
+            className="list-item"
+            onClick={() => {
+              setSearch("");
+            }}
+            to="/Popular_movies"
+          >
             Popular
           </Link>
-          <Link className="list-item" to="/TopRated_movies">
+          <Link
+            className="list-item"
+            onClick={() => {
+              setSearch("");
+            }}
+            to="/TopRated_movies"
+          >
             Top-Rated
           </Link>
         </div>
@@ -42,13 +61,31 @@ function Navbar() {
       </div>
       {isOpen && (
         <div className="menu-links">
-          <Link className="menu-item" to="/">
+          <Link
+            className="menu-item"
+            onClick={() => {
+              setSearch("");
+            }}
+            to="/"
+          >
             Home
           </Link>
-          <Link className="menu-item" to="/Popular_movies">
+          <Link
+            className="menu-item"
+            onClick={() => {
+              setSearch("");
+            }}
+            to="/Popular_movies"
+          >
             Popular
           </Link>
-          <Link className="menu-item" to="/TopRated_movies">
+          <Link
+            className="menu-item"
+            onClick={() => {
+              setSearch("");
+            }}
+            to="/TopRated_movies"
+          >
             Top-Rated
           </Link>
         </div>
