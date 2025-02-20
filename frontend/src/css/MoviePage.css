@@ -51,3 +51,54 @@
     font-weight: bolder;
     color: #006875;
 }
+
+.media-option {
+    height: 60px;
+    width: 40%;
+    justify-self: center;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.media-option button {
+    width: 40%;
+    height: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: aliceblue;
+    border-radius: 10px;
+}
+
+.media-option button:hover {
+    cursor: pointer;
+}
+
+.trailer {
+    background-color: #FF0033;
+    transition: background-color 0.5s ease;
+}
+
+.trailer:hover {
+    background-color: red;
+}
+
+.stream {
+    background-color: #00acc1;
+    transition: background-color 0.5s ease;
+}
+
+.stream:hover {
+    background-color: #006875;
+}
+
+@media (max-width: 700px) {
+    .media-option button {
+        font-size: 1em;
+    }
+    .media-option {
+        height: 40px;
+        width: 60%;
+    }
+}
