@@ -12,11 +12,16 @@ function TopRatedMovies() {
     <div className="movie-section">
       <h3 className="movie-tag">TOP RATED MOVIES:</h3>
       <div className="movie-container">
-        {movies.map((show) => (
-          <Link key={show.id} to={`/movie/${show.id}`}>
-            <MovieCard content={show} />
-          </Link>
-        ))}
+        {movies
+          .filter(
+            (movie) =>
+              movie.poster_path && movie.original_title && movie.vote_average
+          )
+          .map((show) => (
+            <Link key={show.id} to={`/movie/${show.id}`}>
+              <MovieCard content={show} />
+            </Link>
+          ))}
       </div>
     </div>
   );

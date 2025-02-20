@@ -24,11 +24,16 @@ function SimilarMovies({ id }) {
     <div className="movie-section">
       <h3 className="movie-tag">Similar MOVIES:</h3>
       <div className="movie-container">
-        {movies.map((movie) => (
-          <Link key={movie.id} to={`/movie/${movie.id}`}>
-            <MovieCard content={movie} />
-          </Link>
-        ))}
+        {movies
+          .filter(
+            (movie) =>
+              movie.poster_path && movie.original_title && movie.vote_average
+          )
+          .map((movie) => (
+            <Link key={movie.id} to={`/movie/${movie.id}`}>
+              <MovieCard content={movie} />
+            </Link>
+          ))}
       </div>
     </div>
   );
