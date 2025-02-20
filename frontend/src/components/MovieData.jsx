@@ -4,7 +4,7 @@ import SimilarMovies from "../components/SimilarMovies";
 function MovieData({ id }) {
   const api_url = "https://api.themoviedb.org/3/movie/";
   const api_key = import.meta.env.VITE_API_KEY;
-  const movie_url = "https://vidsrc.xyz/embed/movie/";
+  const movieUrl = "https://vidsrc.xyz/embed/movie/";
   const poster_url = "https://image.tmdb.org/t/p/w500";
   const [movieData, setMovieData] = useState([]);
 
@@ -27,7 +27,7 @@ function MovieData({ id }) {
         <h1>{movieData.original_title}</h1>
         <div className="media-player">
           <iframe
-            src={`${movie_url}${id}?autoPlay=false`}
+            src={`${movieUrl}${id}?autoPlay=false`}
             allowFullScreen
           ></iframe>
         </div>

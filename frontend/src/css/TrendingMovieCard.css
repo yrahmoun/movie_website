@@ -8,11 +8,15 @@
 
 .movie-info {
     width: 80%;
-    height: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .movie-info h3 {
-    font-size: 2em;
+    font-size: 1.8em;
+    max-width: 100%;
     font-weight: bolder;
 }
 
@@ -21,6 +25,7 @@
     height: 25px;
     display: flex;
     justify-content: space-between;
+    gap: 30px;
     align-items: center;
 }
 
@@ -46,7 +51,8 @@
 
 .movie-overview {
     width: 60%;
-    height: 50%;
+    height: auto;
+    max-height: 50%;
     overflow: hidden;
     margin-bottom: 10px;
 }
