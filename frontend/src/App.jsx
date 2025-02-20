@@ -4,10 +4,12 @@ import Homepage from "./pages/Homepage";
 import PopularMoviesPage from "./pages/PopularMoviesPage";
 import TopRatedMoviesPage from "./pages/TopRatedMoviesPage";
 import MoviePage from "./pages/MoviePage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/Popular_movies" element={<PopularMoviesPage />} />

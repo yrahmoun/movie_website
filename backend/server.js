@@ -32,11 +32,16 @@ app.get("/search-trailer", async (req, res) => {
     });
     const videoId = response.data.items[0].id.videoId;
     if (!videoId) {
-        return res.status(400).json({error: "no video found"});
+      return res.status(400).json({ error: "no video found" });
     }
-    res.json({trailer: trailer_url + videoId})
+    res.json({ trailer: trailer_url + videoId });
   } catch (error) {
+    const status = error.status;
+    if (status === 403) {
+      console.error("403: daily quota reached");
+      return res.status(403).json({ error: "daily quota reached" });
+    }
     res.status(500).json({ error: "unable to fetch video" });
-    console.log(error);
+    console.log(error.status);
   }
 });
