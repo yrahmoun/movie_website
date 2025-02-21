@@ -1,7 +1,7 @@
 import MovieCard from "./MovieCard";
 import { useMovies } from "../context/MovieContext";
 import { useLocation, Link } from "react-router-dom";
-import PopularPagination from "./popularPagination";
+import PopularPagination from "./PopularPagination";
 
 function PopularMovies() {
   const { popularMovies } = useMovies();

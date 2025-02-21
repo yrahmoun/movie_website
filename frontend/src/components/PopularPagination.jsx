@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect } from "react";
 
-function popularPagination() {
+function PopularPagination() {
   const { popularPage, setPopularPage, totalPopularPages } = useMovies();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -48,4 +48,4 @@ function popularPagination() {
   );
 }
 
-export default popularPagination;
+export default PopularPagination;
