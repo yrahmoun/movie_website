@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import SimilarMovies from "../components/SimilarMovies";
+import { CircleLoader } from "react-spinners";
 import MovieInfo from "./MovieInfo";
 
 function MovieData({ id }) {
@@ -8,6 +9,7 @@ function MovieData({ id }) {
   const movieUrl = "https://vidsrc.xyz/embed/movie/";
   const [movieData, setMovieData] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const [isTrailer, setIsTrailer] = useState(false);
   const backend_url = import.meta.env.VITE_BACKEND_URL;
 
@@ -26,6 +28,7 @@ function MovieData({ id }) {
 
   useEffect(() => {
     if (!movieData.original_title || !movieData.release_date) return;
+    setIsLoading(true);
     const getTrailer = async () => {
       try {
         const query = `${movieData.original_title} ${
@@ -38,6 +41,8 @@ function MovieData({ id }) {
         setTrailerUrl(data.trailer);
       } catch (error) {
         console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     };
     getTrailer();
@@ -49,6 +54,12 @@ function MovieData({ id }) {
       <div className="movie-box">
         <h1>{movieData.original_title}</h1>
         <div className="media-player">
+          {isTrailer && isLoading && (
+            <div className="loading-screen">
+              <CircleLoader size={80} color="#bdbdbd" />
+              <p>fetching trailer . . .</p>
+            </div>
+          )}
           <iframe
             src={isTrailer ? trailerUrl : `${movieUrl}${id}?autoPlay=false`}
             allowFullScreen
