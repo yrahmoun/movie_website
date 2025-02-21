@@ -1,6 +1,7 @@
 import MovieCard from "./MovieCard";
 import { useMovies } from "../context/MovieContext";
 import { useLocation, Link } from "react-router-dom";
+import PopularPagination from "./popularPagination";
 
 function PopularMovies() {
   const { popularMovies } = useMovies();
@@ -23,6 +24,7 @@ function PopularMovies() {
             </Link>
           ))}
       </div>
+      {isPopularPage && <PopularPagination />}
     </div>
   );
 }

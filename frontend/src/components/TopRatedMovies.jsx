@@ -1,6 +1,7 @@
 import { useMovies } from "../context/MovieContext";
 import { useLocation, Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
+import TopRatedPagination from "./TopRatedPagination";
 
 function TopRatedMovies() {
   const { topRatedMovies } = useMovies();
@@ -23,6 +24,7 @@ function TopRatedMovies() {
             </Link>
           ))}
       </div>
+      {isTopRatedPage && <TopRatedPagination />}
     </div>
   );
 }
