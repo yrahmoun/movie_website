@@ -86,6 +86,7 @@ function Navbar() {
               className="menu-item"
               onClick={() => {
                 setSearch("");
+                setIsOpen(false);
               }}
               to={path}
             >
