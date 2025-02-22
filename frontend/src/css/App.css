@@ -79,3 +79,14 @@ a {
   height: 70%;
   border-radius: 8%;
 }
+
+.loading-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: #bdbdbd;
+  font-size: 1.4em;
+}

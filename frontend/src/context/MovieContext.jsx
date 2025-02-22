@@ -7,6 +7,8 @@ export const MovieProvider = ({ children }) => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [popularPage, setPopularPage] = useState(1);
   const [topRatedPage, setTopRatedPage] = useState(1);
+  const [isPopularLoading, setIsPopularLoading] = useState(true);
+  const [isTopRatedLoading, setIsTopRatedLoading] = useState(true);
   const [totalPopularPages, setTotalPopularPages] = useState(1);
   const [totalTopRatedPages, setTotalTopRatedPages] = useState(1);
   const [search, setSearch] = useState("");
@@ -18,6 +20,7 @@ export const MovieProvider = ({ children }) => {
   useEffect(() => {
     const getPopularMovies = async () => {
       try {
+        setIsPopularLoading(true);
         const response = await fetch(
           `${popular_movies_api_url}?page=${popularPage}&api_key=${api_key}`
         );
@@ -26,6 +29,8 @@ export const MovieProvider = ({ children }) => {
         setTotalPopularPages(data.total_pages);
       } catch (error) {
         console.error(error);
+      } finally {
+        setIsPopularLoading(false);
       }
     };
     getPopularMovies();
@@ -34,6 +39,7 @@ export const MovieProvider = ({ children }) => {
   useEffect(() => {
     const getTopRatedMovies = async () => {
       try {
+        setIsTopRatedLoading(true);
         const response = await fetch(
           `${top_rated_movies_api_url}?page=${topRatedPage}&api_key=${api_key}`
         );
@@ -42,6 +48,8 @@ export const MovieProvider = ({ children }) => {
         setTotalTopRatedPages(data.total_pages);
       } catch (error) {
         console.error(error);
+      } finally {
+        setIsTopRatedLoading(false);
       }
     };
     getTopRatedMovies();
@@ -62,6 +70,8 @@ export const MovieProvider = ({ children }) => {
         setTotalPopularPages,
         totalTopRatedPages,
         setTotalTopRatedPages,
+        isPopularLoading,
+        isTopRatedLoading,
       }}
     >
       {children}

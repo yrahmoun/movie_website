@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 function TopRatedPagination() {
   const { topRatedPage, setTopRatedPage, totalTopRatedPages } = useMovies();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     const pageFromUrl = Number(searchParams.get("page")) || 1;
@@ -19,13 +19,7 @@ function TopRatedPagination() {
     <div className="pagination">
       {topRatedPage > 1 && (
         <div className="page-arrow">
-          <Link
-            to={`/TopRated_movies?page=${topRatedPage - 1}`}
-            onClick={() => {
-              setTopRatedPage(topRatedPage - 1);
-              setSearchParams({ page: topRatedPage - 1 });
-            }}
-          >
+          <Link to={`/TopRated_movies?page=${topRatedPage - 1}`}>
             <ChevronLeft size={30} />
           </Link>
         </div>
@@ -33,13 +27,7 @@ function TopRatedPagination() {
       <p>Page {topRatedPage}</p>
       {topRatedPage < totalTopRatedPages && (
         <div className="page-arrow">
-          <Link
-            to={`/TopRated_movies?page=${topRatedPage + 1}`}
-            onClick={() => {
-              setTopRatedPage(topRatedPage + 1);
-              setSearchParams({ page: topRatedPage + 1 });
-            }}
-          >
+          <Link to={`/TopRated_movies?page=${topRatedPage + 1}`}>
             <ChevronRight size={30} />
           </Link>
         </div>

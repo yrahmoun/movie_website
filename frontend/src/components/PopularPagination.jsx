@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 function PopularPagination() {
   const { popularPage, setPopularPage, totalPopularPages } = useMovies();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     const pageFromUrl = Number(searchParams.get("page")) || 1;
@@ -19,13 +19,7 @@ function PopularPagination() {
     <div className="pagination">
       {popularPage > 1 && (
         <div className="page-arrow">
-          <Link
-            to={`/Popular_movies?page=${popularPage - 1}`}
-            onClick={() => {
-              setPopularPage(popularPage - 1);
-              setSearchParams({ page: popularPage - 1 });
-            }}
-          >
+          <Link to={`/Popular_movies?page=${popularPage - 1}`}>
             <ChevronLeft size={30} />
           </Link>
         </div>
@@ -33,13 +27,7 @@ function PopularPagination() {
       <p>Page {popularPage}</p>
       {popularPage < totalPopularPages && (
         <div className="page-arrow">
-          <Link
-            to={`/Popular_movies?page=${popularPage + 1}`}
-            onClick={() => {
-              setPopularPage(popularPage + 1);
-              setSearchParams({ page: popularPage + 1 });
-            }}
-          >
+          <Link to={`/Popular_movies?page=${popularPage + 1}`}>
             <ChevronRight size={30} />
           </Link>
         </div>
