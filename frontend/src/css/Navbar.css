@@ -16,6 +16,7 @@
   border-radius: 5%;
   padding: 3px;
   margin-left: 15px;
+  margin-right: 10px;
 }
 
 .title h1 {
@@ -95,14 +96,18 @@
 .search-icon {
   display: none;
   padding: 3px;
+  height: 37px;
   background-color: #00acc1;
   border-radius: 10%;
   justify-content: center;
   align-items: center;
+  width: 35px;
 }
 
 .search-icon {
-  padding: 8px;
+  padding: 3px 5px;
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 @media (max-width: 900px) {
